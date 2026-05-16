@@ -77,7 +77,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>G:\team_Software_Engineering_project-main\team_Software_Engineering_project-main;$(IncludePath)</IncludePath>
+    <IncludePath>..;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -158,12 +158,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="G:\team_Software_Engineering_project-main\team_Software_Engineering_project-main\battle.cpp" />
-    <ClCompile Include="G:\team_Software_Engineering_project-main\team_Software_Engineering_project-main\game.cpp" />
-    <ClCompile Include="G:\team_Software_Engineering_project-main\team_Software_Engineering_project-main\map.cpp" />
-    <ClCompile Include="G:\team_Software_Engineering_project-main\team_Software_Engineering_project-main\player.cpp" />
-    <ClCompile Include="G:\team_Software_Engineering_project-main\team_Software_Engineering_project-main\pokemon.cpp" />
-    <ClCompile Include="G:\team_Software_Engineering_project-main\team_Software_Engineering_project-main\team_view.cpp" />
+    <ClCompile Include="..\battle.cpp" />
+    <ClCompile Include="..\game.cpp" />
+    <ClCompile Include="..\map.cpp" />
+    <ClCompile Include="..\player.cpp" />
+    <ClCompile Include="..\pokemon.cpp" />
+    <ClCompile Include="..\team_view.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
