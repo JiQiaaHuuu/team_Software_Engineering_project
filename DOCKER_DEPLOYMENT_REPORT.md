@@ -287,13 +287,14 @@ docker pull ghcr.io/erlang-yao/pokemon-mud-client:latest
 # 2. 创建共享网络（必须！否则前端 nginx 找不到后端）
 docker network create pokemon-net
 
-# 3. 启动后端（连到共享网络）
-docker run -d -p 4010:4010 --name pokemon-backend --network pokemon-net ghcr.io/erlang-yao/pokemon-mud-server:latest
+# 3. 启动后端（--network-alias backend 让容器在网络上叫 "backend"）
+docker run -d -p 4010:4010 --name pokemon-backend --network pokemon-net --network-alias backend ghcr.io/erlang-yao/pokemon-mud-server:latest
 
-# 4. 启动前端（连到同一个共享网络）
+# 4. 启动前端（连到同一个网络，nginx 通过 "backend" 找到后端）
 docker run -d -p 5173:80 --name pokemon-frontend --network pokemon-net ghcr.io/erlang-yao/pokemon-mud-client:latest
 
 # 5. 浏览器打开 http://localhost:5173
+
 ```
 
 ### 方式 C：从源码构建（需要源代码）
