@@ -71,7 +71,7 @@ const App: React.FC = () => {
   return (
     <div style={{ width: '100vw', minHeight: '100vh', background: '#0a0a1a' }}>
       {!state.sessionId && <LoginScreen onLogin={handleLogin} />}
-      {state.screen === 'start' && needsStarter && <StartScreen skipToGame={() => dispatch({ type: 'SET_SCREEN', screen: 'game' })} />}
+      {state.screen === 'start' && needsStarter && <StartScreen />}
       {(state.screen === 'game' || state.screen === 'battle') && <GameScreen />}
       {state.screen === 'battle' && <BattleScreen />}
 

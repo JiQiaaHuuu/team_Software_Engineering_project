@@ -20,3 +20,5 @@ pic/bb/*.png
 node_modules/
 server/dist/
 server/data/*.json
+client/dist/
+*.tsbuildinfo
