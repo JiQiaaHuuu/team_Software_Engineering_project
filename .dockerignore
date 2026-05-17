@@ -1,0 +1,16 @@
+node_modules
+server/dist
+server/node_modules
+client/dist
+client/node_modules
+.git
+*.md
+*.sln
+*.vcxproj
+*.cpp
+*.h
+tests
+PokemonTestsNative
+*.docx
+*.png
+*.jpg

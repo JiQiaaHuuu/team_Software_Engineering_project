@@ -1,12 +1,5 @@
 services:
-  backend:
-    image: ghcr.io/erlang-yao/pokemon-mud-server:latest
+  pokemon-mud:
+    image: ghcr.io/erlang-yao/pokemon-mud:latest
     ports:
       - "4010:4010"
-
-  frontend:
-    image: ghcr.io/erlang-yao/pokemon-mud-client:latest
-    ports:
-      - "5173:80"
-    depends_on:
-      - backend

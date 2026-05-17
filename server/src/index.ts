@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 import cors from 'cors';
 import gameRoutes from './routes/game-routes';
 import playerRoutes from './routes/player-routes';
@@ -16,7 +17,7 @@ const PORT = parseInt(process.env.PORT || '4010', 10);
 app.use(cors());
 app.use(express.json());
 
-// 路由
+// API 路由
 app.use('/api/game', gameRoutes);
 app.use('/api/player', playerRoutes);
 app.use('/api/map', mapRoutes);
@@ -29,6 +30,15 @@ app.use('/api/shop', shopRoutes);
 // 健康检查
 app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: Date.now() });
+});
+
+// 在生产环境中托管前端静态文件
+const publicDir = path.join(__dirname, '..', 'public');
+app.use(express.static(publicDir));
+
+// SPA 路由回退：非 API 请求全部返回 index.html
+app.get('*', (_req, res) => {
+  res.sendFile(path.join(publicDir, 'index.html'));
 });
 
 // 全局错误处理
